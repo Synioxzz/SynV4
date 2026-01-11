@@ -811,7 +811,7 @@ local function items() -- debug only
 		table.insert(items,item)
 	end
 end
-getgenv().inv = items()
+getgenv().inv = items
 
 run(function()
 	local KnitInit, Knit
