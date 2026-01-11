@@ -383,11 +383,6 @@ run(function()
 	end))
 end)
 
-run(function()
-	local S,U,P = loginlib:SlientLogin()
-	vape.role = S 
-	vape.user = U
-end)
 
 
 run(function()
