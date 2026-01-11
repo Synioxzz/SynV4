@@ -8055,7 +8055,7 @@ task.spawn(function()
     end
 end)
 
-Libraries
+
 local uipallet = {
 	Font = "Arimo"
 }
