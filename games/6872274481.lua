@@ -805,7 +805,7 @@ local function safeGetProto(func, index)
     end
 end
 
-local function items()
+local function items() -- debug only
 	for _, item in store.inventory.inventory.items do
 		print(item, httpService:JSONEncode(item))
 	end
