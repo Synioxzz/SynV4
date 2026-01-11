@@ -14964,18 +14964,11 @@ run(function()
 		local items = {}
 		for _, item in store.inventory.inventory.items do
 			local proj = bedwars.ItemMeta[item.itemType].projectileSource
-			local ammo = proj and getAmmo(proj)
-			if ammo then
-				table.insert(items, {
-					item,
-					ammo,
-					proj.projectileType(ammo),
-					proj
-				})
-			end
+			table.insert(items,proj)
 		end
 		return items
 	end
+	getgenv().GP = getProjectiles()
 	
 	AutoShoot = vape.Categories.Inventory:CreateModule({
 		Name = 'AutoShoot',
