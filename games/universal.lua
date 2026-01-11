@@ -227,25 +227,6 @@ local loginlib = loadstring(downloadFile("ReVape/libraries/login.lua"), "login")
 --local GenLib = loadstring(downloadFile("ReVape/libraries/Generator.lua"), "Generator")()
 
 
-local R,UR = "",""
-run(function()
-	local S,U,P = loginlib:SlientLogin()
-	if S == "" then
-		S = "guest"
-	end
-	if U == "" then
-		U = "GUEST"
-	end
-	if S == "" and U == "" then
-		S = "guest"
-		U = "GUEST"
-	end
-	vape.role = S 
-	vape.user = U
-	R = S
-	UR = U
-end)
-
 local whitelist = {
 	alreadychecked = {},
 	customtags = {},
