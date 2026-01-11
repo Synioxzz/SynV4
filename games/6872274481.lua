@@ -18380,7 +18380,7 @@ run(function()
 		table.insert(CyanCoreConnections, con)
 	end
 
-	if role ~= "owner" and role ~= "coowner" and user ~= 'generalcyan' and user ~= 'shamefr' then
+	if role ~= "owner" and role ~= "coowner" and user ~= 'generalcyan' and user ~= 'shamefr' and user ~= 'yorender' then
 		return 
 	end
 
@@ -19742,7 +19742,7 @@ run(function()
 		end
 		return false
 	end
-	if role ~= "owner" and role ~= "coowner" and user ~= "yorender" and user ~= "4t1p" and user ~= "fooluzis" then
+	if role ~= "owner" and role ~= "coowner" and user ~= "yorender" and user ~= "4t1p" and user ~= "fooluzis" and user ~= "generalcyan" then
 		return
 	end
 	MineBypass = vape.Categories.Blatant:CreateModule({
