@@ -20213,10 +20213,9 @@ run(function()
 					local d = nil
 					bedwars.MatchHistroyController:requestMatchHistory(lplr.Name):andThen(function(Data)
 						if Data then
-							d = Data
+							bedwars.AppController:openApp({app = bedwars.MatchHistroyApp,appId = "MatchHistoryApp",},Data)
 						end
 					end)
-					bedwars.AppController:openApp({app = bedwars.MatchHistroyApp,appId = "MatchHistoryApp",},d)
 					MHA:Toggle(false)
 				else
 					return
