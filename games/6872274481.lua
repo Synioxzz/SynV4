@@ -12206,11 +12206,6 @@ run(function()
 										if ApplyRGB then
 											bedwars.SummonerKitSkinController.applyClawRGB(clawModel)											
 										end
-										for i, v in clawModel:GetDescendants() do
-											if v:IsA("BasePart") then
-												bedwars.QueryUtil:setQueryIgnored(v, true)
-											end
-										end
 		                                if gameCamera.CFrame.Position and (gameCamera.CFrame.Position - root.Position).Magnitude < 1 then
 		                                    for _, part in clawModel:GetDescendants() do
 		                                        if part:IsA("MeshPart") then
@@ -19605,7 +19600,7 @@ run(function()
 					local victim = playersService:GetPlayerFromCharacter(damageTable.entityInstance)
 					if attacker and victim and victim == lplr then
 						local NormalRange = 14.4
-						local NewDis = (attacker.Character.HumanoidRootPart.Position - entitylib.character.rootPart.Position).Magnitude
+						local NewDis = (attacker.Character.HumanoidRootPart.Position - entitylib.character.RootPart.Position).Magnitude
 						if NewDis > NormalRange then
 							vape:CreateNotification("HackerDetector",attacker.Name .. ` is likely using reach, distance was ({math.floor(NewDis)}) studs`,6,"alert")
 						end
