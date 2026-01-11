@@ -145,13 +145,13 @@ function login:SlientLogin()
 	        return
 		end
         if not req or req.StatusCode ~= 200 then
-            vape:CreateNotification("Onyx", "API Unreachable. Guest mode.", 7,'warning')
+            vape:CreateNotification("Onyx", `API Unreachable. Guest mode. Code {req.StatusCode or 1101}`, 7,'warning')
             role, U, P = "guest", "GUEST", "PASSWORD"
             return
         end
         local decoded = decodeSafe(req.Body)
         if not decoded then
-            vape:CreateNotification("Onyx", "Bad login response. Guest mode.", 7,'warning')
+            vape:CreateNotification("Onyx", `Bad login response. Guest mode. Code {req.StatusCode or 1101}`, 7,'warning')
             role, U, P = "guest", "GUEST", "PASSWORD"
             return
         end
