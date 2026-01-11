@@ -806,8 +806,9 @@ local function safeGetProto(func, index)
 end
 
 local function items() -- debug only
+	local items = {}
 	for _, item in store.inventory.inventory.items do
-		return item, httpService:JSONEncode(item)
+		table.insert(items,item)
 	end
 end
 getgenv().inv = items()
