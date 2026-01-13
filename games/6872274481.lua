@@ -19904,8 +19904,8 @@ run(function()
 									else
 										Meta = "attack_spirit"
 									end
-									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local meta = bedwars.ProjectileMeta[Meta]
+									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
@@ -19929,8 +19929,8 @@ run(function()
 									else
 										Meta = "attack_spirit"
 									end
-									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local meta = bedwars.ProjectileMeta[Meta]
+									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
