@@ -9758,9 +9758,9 @@ run(function()
 					if SyncHit.Enabled then
 						tme = 0.095
 					else
-						tme = 0
+						tme = -0.195
 					end
-					task.wait(1 / UpdateRate.Value - tme)
+					task.wait(1 / UpdateRate.Value - (tme))
 				until not Killaura.Enabled
 			else
 				store.KillauraTarget = nil
