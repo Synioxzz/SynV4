@@ -19831,7 +19831,7 @@ run(function()
 					local d = (dims.Position - origin).Magnitude
 					if Range.Value <= d then
 						pos = dims.Position
-						velo = dims.AssemblyLinearVelocity.Magnitude
+						velo = dims.Velocity
 					end
 				end
 			end
@@ -19846,7 +19846,7 @@ run(function()
 					local d = (ems.Position - origin).Magnitude
 					if Range.Value <= d then
 						pos = ems.Position
-						velo = ems.AssemblyLinearVelocity.Magnitude
+						velo = ems.Velocity
 					end
 				end
 			end
@@ -19905,7 +19905,7 @@ run(function()
 										Meta = "attack_spirit"
 									end
 									local meta = bedwars.ProjectileMeta[Meta]
-									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
+									local gravity = meta.gravitationalAcceleration or 192.05
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
@@ -19930,7 +19930,7 @@ run(function()
 										Meta = "attack_spirit"
 									end
 									local meta = bedwars.ProjectileMeta[Meta]
-									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
+									local gravity = meta.gravitationalAcceleration or 192.05
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
