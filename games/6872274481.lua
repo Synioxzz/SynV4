@@ -19825,14 +19825,12 @@ run(function()
 	end)
 	local function FindDimGen(origin)
 		local pos, velo
-		for i, dims in workspace.ItemDrops:GetChildren() do
-			if dims:IsA("BasePart") then
-				if dims.Name == "diamond" then
-					local d = (dims.Position - origin).Magnitude
-					if Range.Value <= d then
-						pos = dims.Position
-						velo = dims.Velocity
-					end
+		for _, dims in ipairs(workspace.ItemDrops:GetChildren()) do
+			if dims:IsA("BasePart") and dims.Name == "diamond" then
+				local d = (dims.Position - origin).Magnitude
+				if d <= Range.Value then
+					pos = dims.Position
+					velo = dims.Velocity
 				end
 			end
 		end
@@ -19840,18 +19838,16 @@ run(function()
 	end
 	local function FindEmGen(origin)
 		local pos, velo
-		for i, ems in workspace.ItemDrops:GetChildren() do
-			if ems:IsA("BasePart") then
-				if ems.Name == "emerald" then
-					local d = (ems.Position - origin).Magnitude
-					if Range.Value <= d then
-						pos = ems.Position
-						velo = ems.Velocity
-					end
+		for _, ems in ipairs(workspace.ItemDrops:GetChildren()) do
+			if ems:IsA("BasePart") and ems.Name == "emerald" then
+				local d = (ems.Position - origin).Magnitude
+				if d <= Range.Value then
+					pos = ems.Position
+					velo = ems.Velocity
 				end
 			end
 		end
-		return pos,velo
+		return pos, velo
 	end
 	local Meta = ""
 	local CanShoot = true
