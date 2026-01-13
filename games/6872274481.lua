@@ -19818,7 +19818,7 @@ run(function()
 		local s, err = pcall(function()
 			projectileRemote = bedwars.Client:Get(remotes.FireProjectile).instance
 		end)
-		if not s or err then
+		if not s then
 			projectileRemote = {InvokeServer = function() end}
 			warn(err)
 		end
@@ -19894,6 +19894,7 @@ run(function()
 						if Target.Enabled then
 							if Em.Enabled then
 								local pos,spot = FindEmGen(entitylib.character.RootPart.Position)
+								print(pos.X,spot)
 								if pos and CanShoot then
 									CanShoot = false
 									local staff = getItem("spirit_staff")
@@ -19907,7 +19908,6 @@ run(function()
 									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, meta.gravitationalAcceleration, spot, Vector3.zero, workspace.Gravity, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
-										bedwars.ProjectileController:createLocalProjectile(meta, Meta, Meta, pos, nil, dir, {drawDurationSeconds = 0})
 										projectileRemote:InvokeServer(staff.tool, Meta, Meta, pos, pos, dir, httpService:GenerateGUID(true), {drawDurationSeconds = 0, shotId = httpService:GenerateGUID(false)}, workspace:GetServerTimeNow() - 0.045)     
 										task.wait(1 / Delay.GetRandomValue() + math.random())
 										CanShoot = true
