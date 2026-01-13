@@ -19904,8 +19904,9 @@ run(function()
 									else
 										Meta = "attack_spirit"
 									end
+									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local meta = bedwars.ProjectileMeta[Meta]
-									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, meta.gravitationalAcceleration, spot, Vector3.zero, workspace.Gravity, 0, 0)
+									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
 										projectileRemote:InvokeServer(staff.tool, Meta, Meta, pos, pos, dir, httpService:GenerateGUID(true), {drawDurationSeconds = 0, shotId = httpService:GenerateGUID(false)}, workspace:GetServerTimeNow() - 0.045)     
@@ -19928,8 +19929,9 @@ run(function()
 									else
 										Meta = "attack_spirit"
 									end
+									local gravity = typeof(meta.gravitationalAcceleration) == "Vector3" and meta.gravitationalAcceleration.Y or meta.gravitationalAcceleration
 									local meta = bedwars.ProjectileMeta[Meta]
-									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, meta.gravitationalAcceleration, spot, Vector3.zero, workspace.Gravity, 0, 0)
+									local calc = prediction.SolveTrajectory(pos, meta.launchVelocity, gravity, spot, Vector3.zero, 0, 0, 0)
 									if calc then
 										local dir = CFrame.lookAt(pos, calc).LookVector * meta.launchVelocity
 										projectileRemote:InvokeServer(staff.tool, Meta, Meta, pos, pos, dir, httpService:GenerateGUID(true), {drawDurationSeconds = 0, shotId = httpService:GenerateGUID(false)}, workspace:GetServerTimeNow() - 0.045)     
